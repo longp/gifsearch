@@ -12,11 +12,6 @@ app.controller('gifcontroller', ['$scope', '$http', function($scope, $http) {
     })
     .then(function(data) {
       var gifd = data.data.data[0]
-      // $http({
-      //   method:'post',
-      //   url: '/save',
-      //   data:gifd
-      // })
       $scope.url = gifd.images.original.url
 
 

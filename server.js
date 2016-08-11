@@ -49,7 +49,8 @@ app.post('/gif', function(req, res){
         console.log("Uh oh! Got an error from giphy.")
         res.send("There was an error")
       }
-      console.log("the data is : " + data.body)
+      var dud = JSON.parse(data.body)
+      console.log("the data is : " + dud.data[0].type)
 
       res.send(data.body);
 
@@ -57,12 +58,6 @@ app.post('/gif', function(req, res){
 
 })
 
-app.post('/save', function (req, res) {
-  
-  var newGif = new GIF({
-
-  })
-})
 
 
 
