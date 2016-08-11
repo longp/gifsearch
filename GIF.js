@@ -1,7 +1,8 @@
-const mongoose = require('mongoose'),
+var Promise = require('bluebird'),
+      mongoose = Promise.promisifyAll(require('mongoose')),
       Schema = mongoose.Schema;
 
-const gifSchema = new Schema({
+var gifSchema = new Schema({
   id: String,
   text:[String],
   word:[String],
@@ -9,5 +10,5 @@ const gifSchema = new Schema({
 })
 
 
-Const Gif = mongoose.model('Gif', gifSchema)
+var Gif = mongoose.model('Gif', gifSchema)
 module.exports = Gif

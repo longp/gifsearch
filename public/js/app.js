@@ -11,8 +11,16 @@ app.controller('gifcontroller', ['$scope', '$http', function($scope, $http) {
       data: {query:$scope.query}
     })
     .then(function(data) {
-      $scope.url = data.data.data[0].images.original.url
-      console.log($scope.url)
+      var gifd = data.data.data[0]
+      // $http({
+      //   method:'post',
+      //   url: '/save',
+      //   data:gifd
+      // })
+      $scope.url = gifd.images.original.url
+
+
+      console.log(data.data.data[0])
       // console.log(data.data.data[0].images.original.url)
 
     })

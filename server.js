@@ -6,6 +6,7 @@ const express = require('express'),
       PORT = 1337,
       request = require('request'),
       ejs = require('ejs'),
+      GIF = require('./GIF.js'),
       path = require('path');
 // database connection
 const mongoose = require('mongoose');
@@ -48,12 +49,19 @@ app.post('/gif', function(req, res){
         console.log("Uh oh! Got an error from giphy.")
         res.send("There was an error")
       }
-      console.log("data" + data.body.type)
+      console.log("the data is : " + data.body)
 
       res.send(data.body);
 
   })
 
+})
+
+app.post('/save', function (req, res) {
+  
+  var newGif = new GIF({
+
+  })
 })
 
 
