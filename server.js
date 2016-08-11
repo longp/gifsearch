@@ -50,8 +50,17 @@ app.post('/gif', function(req, res){
         res.send("There was an error")
       }
       var dud = JSON.parse(data.body)
+      var words = req.body.query.split(' ')
       console.log("the data is : " + dud.data[0].type)
-
+      console.log("req.body : " + req.body.query)
+      console.log(words);
+      // GIF.findOneAndUpdate({id:dud.data[0].id}, {upsert:true})
+      var newGif = new GIF({
+        id:dud.data[0].id,
+        text: req.body.query,
+        word: words
+      })
+      newGif.save();
       res.send(data.body);
 
   })

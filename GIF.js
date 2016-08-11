@@ -6,7 +6,10 @@ var gifSchema = new Schema({
   id: String,
   text:[String],
   word:[String],
-  count: Number
+  count:{
+    type:Number,
+    default: 1
+  }
 })
 
 
