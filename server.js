@@ -54,7 +54,14 @@ app.post('/gif', function(req, res){
       console.log("the data is : " + dud.data[0].type)
       console.log("req.body : " + req.body.query)
       console.log(words);
-      // GIF.findOneAndUpdate({id:dud.data[0].id}, {upsert:true})
+
+      // TODO increase counter and push words/text arrays into existing documents
+
+  //     GIF.findOneAndUpdate({
+  //       id:dud.data[0].id,{ $inc: { count: 1 }, {upsert:true}, function(err, data){
+  //     //error handling
+  //  }
+})
       var newGif = new GIF({
         id:dud.data[0].id,
         text: req.body.query,
