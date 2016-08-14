@@ -61,7 +61,7 @@ app.post('/gif', function(req, res){
   //       id:dud.data[0].id,{ $inc: { count: 1 }, {upsert:true}, function(err, data){
   //     //error handling
   //  }
-})
+// })
       var newGif = new GIF({
         id:dud.data[0].id,
         text: req.body.query,
